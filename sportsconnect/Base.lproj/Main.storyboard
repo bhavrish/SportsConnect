@@ -324,7 +324,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="104" id="a93-5M-i3U" customClass="eventsTableViewCell" customModule="sportsconnect" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="104" id="a93-5M-i3U" customClass="eventsTableViewCell" customModule="sportsconnect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a93-5M-i3U" id="W4N-Py-TM6">
@@ -369,6 +369,7 @@
                         <viewLayoutGuide key="safeArea" id="dII-kq-0Ii"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="5Bu-dc-lAh" id="WCM-0C-RTK"/>
                         <segue destination="hUc-42-AlH" kind="show" id="cbX-kk-sTb"/>
                     </connections>
                 </viewController>
