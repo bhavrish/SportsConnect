@@ -13,7 +13,9 @@ import CoreLocation
 class homeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-        
+
+    
+
     let locationManager = CLLocationManager()
     var activities = [String]()
 
@@ -88,6 +90,11 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.activityname.text = activities[indexPath.row]
         return cell
     }
+    
+    @IBAction func addActivity(_ sender: Any) {
+        self.performSegue(withIdentifier: "addActSegue", sender: nil)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
