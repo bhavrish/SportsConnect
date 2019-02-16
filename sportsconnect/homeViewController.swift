@@ -13,9 +13,7 @@ import CoreLocation
 class homeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var activityname: UILabel!
-    
+        
     let locationManager = CLLocationManager()
     var activities = [String]()
 
