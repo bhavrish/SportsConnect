@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class signupViewController: UIViewController {
 
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var genderSegControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,16 +26,32 @@ class signupViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onRegister(_ sender: Any) {
+        
+        // initializes a new Parse user object
+        let newUser = PFUser()
+        
+        // sets user properties
+        newUser["name"] = nameField.text
+        newUser.username = usernameField.text
+        newUser.password = passwordField.text
+        if genderSegControl.selectedSegmentIndex==0 {
+            newUser["gender"] = "male"
+        }
+        else if genderSegControl.selectedSegmentIndex==1 {
+            newUser["gender"] = "female"
+        }
+        newUser.signUpInBackground { (success: Bool, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("User created")
+                
+                self.performSegue(withIdentifier: "mainSegue2", sender: nil)
+            }
+            
+        }
     }
-    */
-
+    
 }
