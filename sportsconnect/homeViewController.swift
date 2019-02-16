@@ -14,8 +14,6 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var activityname: UILabel!
-    
     let locationManager = CLLocationManager()
     var activities = [String]()
 
