@@ -133,7 +133,7 @@
                                             <color key="backgroundColor" red="0.29411764709999999" green="0.74901960779999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="activityname" destination="hlE-BV-0Nb" id="Vaa-ca-Igl"/>
+                                            <outlet property="activityname" destination="hlE-BV-0Nb" id="dJt-Th-SVQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -142,16 +142,87 @@
                         <color key="backgroundColor" red="0.29411764709999999" green="0.74901960779999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="lve-9m-5fm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="ePs-ea-YGQ"/>
+                    <navigationItem key="navigationItem" title="Home" id="ePs-ea-YGQ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="PHm-YN-2Xh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mpx-1e-udd">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Activity"/>
+                                <connections>
+                                    <action selector="addActivity:" destination="Rew-2U-pQJ" eventType="touchUpInside" id="TCV-hy-RRj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="activityname" destination="hlE-BV-0Nb" id="NHe-gL-iRc"/>
                         <outlet property="tableView" destination="plA-c1-vt9" id="RVA-dI-kpD"/>
                         <segue destination="C4g-eA-R7Y" kind="show" id="kJk-5V-d64"/>
+                        <segue destination="ZeS-BI-Y0f" kind="show" identifier="addActSegue" id="9oL-l2-68m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXD-0e-aG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1918" y="100"/>
+        </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="3ew-rm-B7t">
+            <objects>
+                <viewController id="ZeS-BI-Y0f" customClass="activityViewController" customModule="sportsconnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l7f-AZ-eSX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Actvity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-cP-TMC">
+                                <rect key="frame" x="18" y="143" width="232" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How many players?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUM-JD-cQs">
+                                <rect key="frame" x="16" y="263" width="286" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jj3-6q-4vd">
+                                <rect key="frame" x="18" y="313" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.1247418899" blue="0.82454505359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FGU-50-r4c">
+                                <rect key="frame" x="16" y="193" width="329" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WpA-Yy-bHt">
+                                <rect key="frame" x="123" y="600" width="133" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jT-ND-Xd0">
+                                        <rect key="frame" x="18" y="5" width="96" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <state key="normal" title="Update">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29411764709999999" green="0.74901960779999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="u70-bx-DN6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B33-hb-cKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="822"/>
         </scene>
         <!--Conditions View Controller-->
         <scene sceneID="nDZ-UY-4qX">
@@ -408,6 +479,6 @@
         <image name="loginLogo" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o5B-y9-Bed"/>
+        <segue reference="KiI-BJ-Ekw"/>
     </inferredMetricsTieBreakers>
 </document>
