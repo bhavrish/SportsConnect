@@ -24,6 +24,7 @@
 		45FBC8EC2217A157001670F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FBC8EA2217A157001670F7 /* LaunchScreen.storyboard */; };
 		45FBC8F72217A157001670F7 /* sportsconnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC8F62217A157001670F7 /* sportsconnectTests.swift */; };
 		45FBC9022217A157001670F7 /* sportsconnectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC9012217A157001670F7 /* sportsconnectUITests.swift */; };
+		49B7C9782218671A00F690D8 /* eventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B7C9772218671A00F690D8 /* eventsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		45FBC8FD2217A157001670F7 /* sportsconnectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sportsconnectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FBC9012217A157001670F7 /* sportsconnectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sportsconnectUITests.swift; sourceTree = "<group>"; };
 		45FBC9032217A157001670F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49B7C9772218671A00F690D8 /* eventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventsTableViewCell.swift; sourceTree = "<group>"; };
 		6716AA5A791F18FE2F9C752C /* Pods-sportsconnectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsconnectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sportsconnectUITests/Pods-sportsconnectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		89C2ADAE5048634E2A114F56 /* Pods-sportsconnectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsconnectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sportsconnectUITests/Pods-sportsconnectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		93F4A67A37306B23107A15AD /* Pods-sportsconnectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsconnectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sportsconnectTests/Pods-sportsconnectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				45851C1F22183F9D002C7CB1 /* homeViewController.swift */,
 				45851C2122183FB2002C7CB1 /* conditionsViewController.swift */,
 				45851C2322183FDA002C7CB1 /* eventsViewController.swift */,
+				49B7C9772218671A00F690D8 /* eventsTableViewCell.swift */,
 				45851C2522183FE8002C7CB1 /* messagingViewController.swift */,
 				45851C2722185388002C7CB1 /* homeTableViewCell.swift */,
 				45851C29221869B4002C7CB1 /* activityViewController.swift */,
@@ -408,6 +411,7 @@
 				45851C2222183FB2002C7CB1 /* conditionsViewController.swift in Sources */,
 				45FBC8E22217A154001670F7 /* AppDelegate.swift in Sources */,
 				45851C2622183FE8002C7CB1 /* messagingViewController.swift in Sources */,
+				49B7C9782218671A00F690D8 /* eventsTableViewCell.swift in Sources */,
 				45851C2822185388002C7CB1 /* homeTableViewCell.swift in Sources */,
 				45851C2A221869B4002C7CB1 /* activityViewController.swift in Sources */,
 				45851C2022183F9D002C7CB1 /* homeViewController.swift in Sources */,
