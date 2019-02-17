@@ -371,18 +371,24 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuy-UV-wiD">
                                                     <rect key="frame" x="232" y="33" width="42" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.5568627451" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.29411764709999999" green="0.4823529412" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Join">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="joinButtonClicked:" destination="a93-5M-i3U" eventType="touchUpInside" id="Zqp-vy-2AO"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDv-IL-k9y">
-                                                    <rect key="frame" x="309" y="31" width="42" height="36"/>
+                                                    <rect key="frame" x="303" y="33" width="42" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.5568627451" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Leave">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="leaveButtonClicked:" destination="a93-5M-i3U" eventType="touchUpInside" id="IMs-cb-cJD"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW4-vY-ujB">
                                                     <rect key="frame" x="27" y="69" width="72" height="21"/>
@@ -398,10 +404,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n14-w0-ddL">
+                                                    <rect key="frame" x="226" y="22" width="55" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="chat">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="joinButtonClicked:" destination="a93-5M-i3U" eventType="touchUpInside" id="eQF-ZY-NbZ"/>
+                                                        <segue destination="hUc-42-AlH" kind="show" identifier="messageSegue" id="wnI-Lf-guL"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.29411764709999999" green="0.74901960779999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="chatButton" destination="n14-w0-ddL" id="eI2-5D-M54"/>
                                             <outlet property="eventDateLabel" destination="gW4-vY-ujB" id="pkg-lY-fP3"/>
                                             <outlet property="eventNameLabel" destination="Lps-Kb-Eer" id="ley-jM-y81"/>
                                             <outlet property="eventTownLabel" destination="bUm-yw-u8y" id="K9p-d1-B3S"/>
@@ -515,7 +533,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="haA-8H-O11">
-                                <rect key="frame" x="0.0" y="167" width="375" height="645"/>
+                                <rect key="frame" x="0.0" y="175" width="375" height="637"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -551,21 +569,21 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write Message:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lJ-2S-GYT">
-                                <rect key="frame" x="16" y="60" width="81" height="48"/>
+                                <rect key="frame" x="16" y="98" width="81" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V04-FX-H1n">
-                                <rect key="frame" x="119" y="67" width="240" height="30"/>
+                                <rect key="frame" x="119" y="106" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od0-za-055">
-                                <rect key="frame" x="172" y="114" width="31" height="30"/>
+                                <rect key="frame" x="172" y="144" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Post">
                                     <color key="titleColor" red="1" green="0.1247418899" blue="0.82454505359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -704,6 +722,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chat" width="200" height="200"/>
         <image name="sportsHome" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>

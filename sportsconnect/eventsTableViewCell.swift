@@ -16,6 +16,7 @@ class eventsTableViewCell: UITableViewCell {
     @IBOutlet weak var leaveButton: UIButton!
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var eventTownLabel: UILabel!
+    @IBOutlet weak var chatButton: UIButton!
     
     
     override func awakeFromNib() {
@@ -30,7 +31,22 @@ class eventsTableViewCell: UITableViewCell {
     
     func updateUI() {
         leaveButton.isHidden = true
-        joinButtton.layer.cornerRadius = 5
+        chatButton.isHidden = true
+        joinButtton.layer.cornerRadius = 10
+        leaveButton.layer.cornerRadius = 10
     }
+    
+    @IBAction func joinButtonClicked(_ sender: Any) {
+        joinButtton.isHidden = true
+        chatButton.isHidden = false
+        leaveButton.isHidden = false
+    }
+    
+    @IBAction func leaveButtonClicked(_ sender: Any) {
+        joinButtton.isHidden = false
+        chatButton.isHidden = true
+        leaveButton.isHidden = true
+    }
+    
 
 }

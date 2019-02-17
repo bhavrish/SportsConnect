@@ -42,5 +42,19 @@ class ViewController: UIViewController {
         
     }
     
+    func getUserName() -> String {
+        var email:String = usernameField.text!
+        var userName:String = ""
+        for char in email {
+            if char == "@" {
+                break
+            }
+            userName.append(char)
+        }
+        print(userName)
+        return userName
+    }
+    
+    
 }
 

@@ -16,6 +16,8 @@ class conditionsViewController: UIViewController {
     @IBOutlet weak var dateSelector: UIDatePicker!
     
     var activityName : String?
+    var username:String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
