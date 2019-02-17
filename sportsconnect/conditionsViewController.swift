@@ -12,7 +12,7 @@ class conditionsViewController: UIViewController {
 
     
     @IBOutlet weak var milesSelector: UISegmentedControl!
-    @IBOutlet weak var genderSelector: UISegmentedControl!
+    @IBOutlet weak var partnerSelector: UISegmentedControl!
     @IBOutlet weak var dateSelector: UIDatePicker!
     
     var activityName : String?
@@ -36,7 +36,7 @@ class conditionsViewController: UIViewController {
         if segue.identifier == "eventSegue" {
             let destinationVC = segue.destination as! eventsViewController
             destinationVC.miles = getMiles(sender: milesSelector)
-            destinationVC.gender = getGender(sender: genderSelector)
+            destinationVC.partnerLevel = getPartnerLevel(sender: partnerSelector)
             destinationVC.date = getDate(sender: dateSelector)
             destinationVC.eventName = activityName!
         }
@@ -57,12 +57,14 @@ class conditionsViewController: UIViewController {
         }
     }
     
-    func getGender(sender : UISegmentedControl) -> String {
+    func getPartnerLevel(sender : UISegmentedControl) -> String {
         switch sender.selectedSegmentIndex {
         case 0:
-            return "Male"
+            return "Beginner"
         case 1:
-            return "Female"
+            return "Intermidiate"
+        case 2:
+            return "Advance"
         default:
             return " "
         }

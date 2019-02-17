@@ -289,8 +289,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <segments>
-                                    <segment title="Male"/>
-                                    <segment title="Female"/>
+                                    <segment title="Beginner"/>
+                                    <segment title="Intermidiate"/>
+                                    <segment title="Advance"/>
                                 </segments>
                                 <color key="tintColor" red="0.70456201419999998" green="0.011754978189999999" blue="0.14309210019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
@@ -331,8 +332,8 @@
                     </view>
                     <connections>
                         <outlet property="dateSelector" destination="PFQ-4X-Nhp" id="65T-Bo-bsI"/>
-                        <outlet property="genderSelector" destination="VZV-VR-i2Z" id="QaH-vQ-iiX"/>
                         <outlet property="milesSelector" destination="SSv-cI-AMD" id="34G-4Q-YfI"/>
+                        <outlet property="partnerSelector" destination="VZV-VR-i2Z" id="k20-Nh-yHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdY-Zf-H9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
