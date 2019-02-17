@@ -11,6 +11,7 @@ import UIKit
 class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
+    var eventName:String?
     var miles:String?
     var gender:String?
     var date:String?
@@ -28,7 +29,10 @@ class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         updateUI()
         eventsFiller()
-        
+        print(miles!)
+        print(gender!)
+        print(date!)
+        print(eventName!)
     }
 
     override func didReceiveMemoryWarning() {
