@@ -25,7 +25,7 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         tableView.dataSource = self;
         tableView.delegate = self;
-        self.tableView.rowHeight = 125
+        self.tableView.rowHeight = 100
 
         // set the firebase reference
         refActivities = Database.database().reference().child("activities");
@@ -40,7 +40,6 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let actDescription = actObject?["description"] as! String?
                 let actId = actObject?["id"] as! String?
                 
-                print(actName)
                 
                 let activity = activitiesModel(id: actId ,activityName: actName ,numPlayers: actnumPlayers ,description: actDescription)
                 
@@ -94,9 +93,9 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeTableViewCell", for: indexPath) as! homeTableViewCell
         
         let activity: activitiesModel
-        
         activity = activityData[indexPath.row]
         cell.activityname.text = activity.activityName
+        cell.updateImages(name: cell.activityname.text!)
         return cell
     }
     
@@ -104,10 +103,13 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.performSegue(withIdentifier: "addActSegue", sender: nil)
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    @IBAction func cellClicked(_ sender: Any) {
+        print("Aninda!!!")
+    }
 }

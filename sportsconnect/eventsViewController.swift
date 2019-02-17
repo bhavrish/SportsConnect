@@ -11,9 +11,11 @@ import UIKit
 class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
+    var miles:String?
+    var gender:String?
+    var date:String?
     
     var events:[[String:Any]] = [] //Array of Dictionaries: All the events
-    
     
     /*  keys:
         "name"
