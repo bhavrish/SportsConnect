@@ -42,9 +42,5 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func onSignUp(_ sender: Any) {
-        self.performSegue(withIdentifier: "signUpSegue", sender: nil)
-    }
-    
 }
 
