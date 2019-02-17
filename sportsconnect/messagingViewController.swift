@@ -37,11 +37,11 @@ class messagingViewController: UIViewController, UITableViewDelegate, UITableVie
             
             for messages in snapshot.children.allObjects as! [DataSnapshot] {
                 let messageObject = messages.value as? [String: AnyObject]
-                let messageText = messageObject?["text"] as! String?
+                let messageText = messageObject?["textt"] as! String?
                 let messageName = messageObject?["name"] as! String?
                 let messageId = messageObject?["id"] as! String?
                 
-                let message = messagesModel(id: messageId,name:messageText,textt: messageText)
+                let message = messagesModel(id: messageId,name:messageName,textt: messageText)
                 
                 self.messageData.append(message)
             }
@@ -78,7 +78,7 @@ class messagingViewController: UIViewController, UITableViewDelegate, UITableVie
         let key = refMessages?.childByAutoId().key
         
         //building child
-        let message = ["id":key,"name": username,"textt": messageField.text as! String]
+        let message = ["id":key,"name": "bhavesh shah","textt": messageField.text as! String]
         
         //pushes child to parent
         refMessages?.child(key!).setValue(message)

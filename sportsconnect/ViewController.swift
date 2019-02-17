@@ -55,6 +55,10 @@ class ViewController: UIViewController {
         return userName
     }
     
+    @IBAction func onRegister(_ sender: Any) {
+        self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+    }
+    
     
 }
 
