@@ -13,6 +13,12 @@ import FirebaseDatabase
 class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+
+    
+    var eventName:String?
+    var miles:String?
+    var partnerLevel:String?
+    var date:String?
     
     var refEvents:DatabaseReference?
 
@@ -23,6 +29,10 @@ class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.rowHeight = 100
+        print(eventName!)
+        print(miles!)
+        print(partnerLevel!)
+        print(date!)
         
         // set the firebase reference
         refEvents = Database.database().reference().child("events");
@@ -69,5 +79,10 @@ class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
 
+    @IBAction func createEvent(_ sender: Any) {
+        self.performSegue(withIdentifier: "organizeSegue", sender: nil)
+    }
+    
+    
 }
 

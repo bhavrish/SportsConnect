@@ -91,7 +91,6 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Contents for each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeTableViewCell", for: indexPath) as! homeTableViewCell
-        
         let activity: activitiesModel
         activity = activityData[indexPath.row]
         cell.activityname.text = activity.activityName
@@ -109,7 +108,11 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    @IBAction func cellClicked(_ sender: Any) {
-        print("Aninda!!!")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "activitySegue" {
+            let destinationVC = segue.destination as! conditionsViewController
+            let cell = sender as! homeTableViewCell
+            destinationVC.activityName = cell.activityname.text
+        }
     }
 }
