@@ -142,7 +142,7 @@
                                             <outlet property="activityImageView" destination="oCl-je-bgU" id="01w-xm-J6u"/>
                                             <outlet property="activityname" destination="hlE-BV-0Nb" id="fHD-f4-8YR"/>
                                             <outlet property="cellView" destination="ULP-Z7-E3t" id="NwB-MD-b46"/>
-                                            <segue destination="C4g-eA-R7Y" kind="show" id="iZ8-1W-gdl"/>
+                                            <segue destination="C4g-eA-R7Y" kind="show" identifier="activitySegue" id="iZ8-1W-gdl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -289,8 +289,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <segments>
-                                    <segment title="Male"/>
-                                    <segment title="Female"/>
+                                    <segment title="Beginner"/>
+                                    <segment title="Intermidiate"/>
+                                    <segment title="Advance"/>
                                 </segments>
                                 <color key="tintColor" red="0.70456201419999998" green="0.011754978189999999" blue="0.14309210019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
@@ -331,8 +332,8 @@
                     </view>
                     <connections>
                         <outlet property="dateSelector" destination="PFQ-4X-Nhp" id="65T-Bo-bsI"/>
-                        <outlet property="genderSelector" destination="VZV-VR-i2Z" id="QaH-vQ-iiX"/>
                         <outlet property="milesSelector" destination="SSv-cI-AMD" id="34G-4Q-YfI"/>
+                        <outlet property="partnerSelector" destination="VZV-VR-i2Z" id="k20-Nh-yHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdY-Zf-H9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -406,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdJ-sB-6hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3548" y="99.753694581280797"/>
+            <point key="canvasLocation" x="3465" y="100"/>
         </scene>
         <!--Organize Events View Controller-->
         <scene sceneID="iD0-b0-cB8">

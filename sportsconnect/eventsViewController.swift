@@ -11,24 +11,22 @@ import UIKit
 class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
+    var eventName:String?
     var miles:String?
-    var gender:String?
+    var partnerLevel:String?
     var date:String?
     
     var events:[[String:Any]] = [] //Array of Dictionaries: All the events
     
-    /*  keys:
-        "name"
-        "date"
-        "location"
-        "people"
-     */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         eventsFiller()
-        
+        print(miles!)
+        print(partnerLevel!)
+        print(date!)
+        print(eventName!)
     }
 
     override func didReceiveMemoryWarning() {
