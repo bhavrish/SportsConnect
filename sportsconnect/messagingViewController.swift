@@ -7,29 +7,87 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-class messagingViewController: UIViewController {
+class messagingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var messageField: UITextField!
+    
+    var username:String?
+    
+    var refMessages:DatabaseReference?
+    
+    var messageData = [messagesModel]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.rowHeight = 100
+        
+        // set the firebase reference
+        refMessages = Database.database().reference().child("messages");
+        
+        // retrieve the posts and listen for changes
+        refMessages?.observe(DataEventType.value, with: { (snapshot) in
+            
+            for messages in snapshot.children.allObjects as! [DataSnapshot] {
+                let messageObject = messages.value as? [String: AnyObject]
+                let messageText = messageObject?["text"] as! String?
+                let messageName = messageObject?["name"] as! String?
+                let messageId = messageObject?["id"] as! String?
+                
+                let message = messagesModel(id: messageId,name:messageText,textt: messageText)
+                
+                self.messageData.append(message)
+            }
+            
+            self.tableView.reloadData()
+            
+            self.updateUI()
+        })
+        
     }
 
+    func updateUI() {
+        self.tableView.rowHeight = 125
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messageData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! messageTableViewCell
+        
+        let message: messagesModel
+        message = messageData[indexPath.row]
+        cell.nameLabel.text = message.name
+        cell.messageLabel.text = message.textt
+        
+        
+        return cell
+    }
+    
+    @IBAction func onPost(_ sender: Any) {
+        // key for child
+        let key = refMessages?.childByAutoId().key
+        
+        //building child
+        let message = ["id":key,"name": username,"textt": messageField.text as! String]
+        
+        //pushes child to parent
+        refMessages?.child(key!).setValue(message)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

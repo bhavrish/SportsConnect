@@ -20,6 +20,8 @@
 		45851C30221907C1002C7CB1 /* activitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45851C2F221907C1002C7CB1 /* activitiesModel.swift */; };
 		45851C3222196551002C7CB1 /* organizeEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45851C3122196551002C7CB1 /* organizeEventsViewController.swift */; };
 		45851C3422198F20002C7CB1 /* eventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45851C3322198F20002C7CB1 /* eventsModel.swift */; };
+		45851C362219BE3A002C7CB1 /* messagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45851C352219BE3A002C7CB1 /* messagesModel.swift */; };
+		45851C382219BFF0002C7CB1 /* messageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45851C372219BFF0002C7CB1 /* messageTableViewCell.swift */; };
 		45FBC8E22217A154001670F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC8E12217A154001670F7 /* AppDelegate.swift */; };
 		45FBC8E42217A154001670F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC8E32217A154001670F7 /* ViewController.swift */; };
 		45FBC8E72217A154001670F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FBC8E52217A154001670F7 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		45851C2F221907C1002C7CB1 /* activitiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitiesModel.swift; sourceTree = "<group>"; };
 		45851C3122196551002C7CB1 /* organizeEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = organizeEventsViewController.swift; sourceTree = "<group>"; };
 		45851C3322198F20002C7CB1 /* eventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventsModel.swift; sourceTree = "<group>"; };
+		45851C352219BE3A002C7CB1 /* messagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesModel.swift; sourceTree = "<group>"; };
+		45851C372219BFF0002C7CB1 /* messageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTableViewCell.swift; sourceTree = "<group>"; };
 		45FBC8DE2217A154001670F7 /* sportsconnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportsconnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FBC8E12217A154001670F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45FBC8E32217A154001670F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,9 +160,11 @@
 				45851C29221869B4002C7CB1 /* activityViewController.swift */,
 				45851C2F221907C1002C7CB1 /* activitiesModel.swift */,
 				45851C3322198F20002C7CB1 /* eventsModel.swift */,
+				45851C352219BE3A002C7CB1 /* messagesModel.swift */,
 				9750D25F22194D4E00EB36F9 /* LaunchScreenViewController.swift */,
 				45851C3122196551002C7CB1 /* organizeEventsViewController.swift */,
 				495AF24A221942D900338962 /* GoogleService-Info.plist */,
+				45851C372219BFF0002C7CB1 /* messageTableViewCell.swift */,
 			);
 			path = sportsconnect;
 			sourceTree = "<group>";
@@ -436,7 +442,9 @@
 				49B7C9782218671A00F690D8 /* eventsTableViewCell.swift in Sources */,
 				45851C2822185388002C7CB1 /* homeTableViewCell.swift in Sources */,
 				45851C2A221869B4002C7CB1 /* activityViewController.swift in Sources */,
+				45851C362219BE3A002C7CB1 /* messagesModel.swift in Sources */,
 				45851C2022183F9D002C7CB1 /* homeViewController.swift in Sources */,
+				45851C382219BFF0002C7CB1 /* messageTableViewCell.swift in Sources */,
 				9750D26022194D4E00EB36F9 /* LaunchScreenViewController.swift in Sources */,
 				45851C30221907C1002C7CB1 /* activitiesModel.swift in Sources */,
 			);
