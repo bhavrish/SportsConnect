@@ -19,6 +19,7 @@
 		45851C2A221869B4002C7CB1 /* activityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45851C29221869B4002C7CB1 /* activityViewController.swift */; };
 		45851C2E2218AAC1002C7CB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45851C2D2218AAC1002C7CB1 /* GoogleService-Info.plist */; };
 		45851C30221907C1002C7CB1 /* activitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45851C2F221907C1002C7CB1 /* activitiesModel.swift */; };
+		45851C3222196551002C7CB1 /* organizeEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45851C3122196551002C7CB1 /* organizeEventsViewController.swift */; };
 		45FBC8E22217A154001670F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC8E12217A154001670F7 /* AppDelegate.swift */; };
 		45FBC8E42217A154001670F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC8E32217A154001670F7 /* ViewController.swift */; };
 		45FBC8E72217A154001670F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FBC8E52217A154001670F7 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		45851C29221869B4002C7CB1 /* activityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityViewController.swift; sourceTree = "<group>"; };
 		45851C2D2218AAC1002C7CB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45851C2F221907C1002C7CB1 /* activitiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitiesModel.swift; sourceTree = "<group>"; };
+		45851C3122196551002C7CB1 /* organizeEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = organizeEventsViewController.swift; sourceTree = "<group>"; };
 		45FBC8DE2217A154001670F7 /* sportsconnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportsconnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FBC8E12217A154001670F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45FBC8E32217A154001670F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				45851C29221869B4002C7CB1 /* activityViewController.swift */,
 				45851C2D2218AAC1002C7CB1 /* GoogleService-Info.plist */,
 				45851C2F221907C1002C7CB1 /* activitiesModel.swift */,
+				45851C3122196551002C7CB1 /* organizeEventsViewController.swift */,
 			);
 			path = sportsconnect;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				45851C2422183FDA002C7CB1 /* eventsViewController.swift in Sources */,
 				45851C1E22183F80002C7CB1 /* signupViewController.swift in Sources */,
 				45851C2222183FB2002C7CB1 /* conditionsViewController.swift in Sources */,
+				45851C3222196551002C7CB1 /* organizeEventsViewController.swift in Sources */,
 				45FBC8E22217A154001670F7 /* AppDelegate.swift in Sources */,
 				45851C2622183FE8002C7CB1 /* messagingViewController.swift in Sources */,
 				49B7C9782218671A00F690D8 /* eventsTableViewCell.swift in Sources */,
