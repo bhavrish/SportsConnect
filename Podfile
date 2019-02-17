@@ -19,4 +19,8 @@ pod "AlamofireImage"
     # Pods for testing
   end
 
+  target 'sportsconnect' do
+	pod 'Animation', '~ 1.0'
+  end
+
 end
