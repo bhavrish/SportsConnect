@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CrO-6H-2gP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXD-0e-aG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="100"/>
+            <point key="canvasLocation" x="1512.8" y="99.753694581280797"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="3ew-rm-B7t">
@@ -379,11 +379,27 @@
                     <connections>
                         <outlet property="tableView" destination="5Bu-dc-lAh" id="WCM-0C-RTK"/>
                         <segue destination="hUc-42-AlH" kind="show" id="cbX-kk-sTb"/>
+                        <segue destination="Auc-qr-EGW" kind="show" identifier="organizeSegue" id="v0h-pK-LvC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdJ-sB-6hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3548" y="99.753694581280797"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iD0-b0-cB8">
+            <objects>
+                <viewController id="Auc-qr-EGW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jgt-kp-BPu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.29411764709999999" green="0.74901960779999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="eZn-Cj-LiU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4l-BZ-dgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3575" y="822"/>
         </scene>
         <!--Messaging View Controller-->
         <scene sceneID="zvt-Qu-9NH">
@@ -516,7 +532,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sportsHome" width="360" height="360"/>
+        <image name="sportsHome" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="o5B-y9-Bed"/>

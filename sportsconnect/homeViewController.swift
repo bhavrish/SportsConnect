@@ -25,12 +25,13 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         tableView.dataSource = self;
         tableView.delegate = self;
-        
+        self.tableView.rowHeight = 125
+
         // set the firebase reference
         refActivities = Database.database().reference().child("activities");
 
         // retrieve the posts and listen for changes
-        refActivities?.observe(.childAdded, with: { (snapshot) in
+        refActivities?.observe(DataEventType.value, with: { (snapshot) in
             
             for activities in snapshot.children.allObjects as! [DataSnapshot] {
                 let actObject = activities.value as? [String: AnyObject]
