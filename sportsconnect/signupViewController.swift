@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Parse
+import Firebase
+import FirebaseAuth
 
 class signupViewController: UIViewController {
 
@@ -28,30 +29,19 @@ class signupViewController: UIViewController {
     }
 
     @IBAction func onRegister(_ sender: Any) {
-        
-        // initializes a new Parse user object
-        let newUser = PFUser()
-        
-        // sets user properties
-        newUser["name"] = nameField.text
-        newUser.username = usernameField.text
-        newUser.password = passwordField.text
-        if genderSegControl.selectedSegmentIndex==0 {
-            newUser["gender"] = "male"
-        }
-        else if genderSegControl.selectedSegmentIndex==1 {
-            newUser["gender"] = "female"
-        }
-        newUser.signUpInBackground { (success: Bool, error: Error?) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("User created")
-                
-                self.performSegue(withIdentifier: "mainSegue2", sender: nil)
-            }
+        if let email = usernameField.text, let pass = passwordField.text {
+            Auth.auth().createUser(withEmail: email, password: pass, completion: { (user,error) in
             
+            // Chat that user isn't nil
+                if let u = user {
+                    self.performSegue(withIdentifier: "mainSegue2", sender: nil)
+                }
+                else {
+                    // return error message if doesnt work
+                }
+            })
+       
         }
-    }
     
+    }
 }

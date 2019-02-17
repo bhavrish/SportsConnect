@@ -6,7 +6,9 @@ target 'sportsconnect' do
   use_frameworks!
 
   # Pods for sportsconnect
-pod "Parse"
+pod "Firebase/Core"
+pod "Firebase/Auth"
+pod "Firebase/Database"
 pod "AlamofireImage"
 
   target 'sportsconnectTests' do

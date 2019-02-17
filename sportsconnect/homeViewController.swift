@@ -7,24 +7,47 @@
 //
 
 import UIKit
-import Parse
 import CoreLocation
+import FirebaseAuth
+import FirebaseDatabase
 
 class homeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
+    var refActivities:DatabaseReference?
     
-
+    var activityData = [activitiesModel]()
     let locationManager = CLLocationManager()
-    var activities = [String]()
 
-        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self;
         tableView.delegate = self;
+        
+        // set the firebase reference
+        refActivities = Database.database().reference().child("activities");
+
+        // retrieve the posts and listen for changes
+        refActivities?.observe(.childAdded, with: { (snapshot) in
+            
+            for activities in snapshot.children.allObjects as! [DataSnapshot] {
+                let actObject = activities.value as? [String: AnyObject]
+                let actName = actObject?["activityName"] as! String?
+                let actnumPlayers = actObject?["numPlayers"] as! String?
+                let actDescription = actObject?["description"] as! String?
+                let actId = actObject?["id"] as! String?
+                
+                print(actName)
+                
+                let activity = activitiesModel(id: actId ,activityName: actName ,numPlayers: actnumPlayers ,description: actDescription)
+                
+                self.activityData.append(activity)
+            }
+            
+            self.tableView.reloadData()
+        })
         
         // Can use both when app is open and when app is in background.
         locationManager.requestAlwaysAuthorization()
@@ -33,25 +56,6 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
-        }
-    }
-    
-    // code for fetching data from database
-    func fetchPostData() {
-        let query = PFQuery(className: "Activities")
-        query.order(byDescending: "name")
-        query.findObjectsInBackground { (posts, error) in
-            if error == nil {
-                for post in posts! {
-                    self.activities.append(post["acitivityName"] as! String)
-                }
-                
-                self.tableView.reloadData()
-            }
-                
-            else {
-                print(error)
-            }
         }
     }
     
@@ -81,13 +85,17 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Number of Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activities.count;
+        return activityData.count;
     }
     
     // Contents for each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeTableViewCell", for: indexPath) as! homeTableViewCell
-        cell.activityname.text = activities[indexPath.row]
+        
+        let activity: activitiesModel
+        
+        activity = activityData[indexPath.row]
+        cell.activityname.text = activity.activityName
         return cell
     }
     

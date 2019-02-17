@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a51-HL-Abp">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a51-HL-Abp">
                                 <rect key="frame" x="67" y="413" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -108,7 +108,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.29411764709999999" green="0.74901960779999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="72" id="Jml-d2-BTZ" customClass="homeTableViewCell" customModule="sportsconnect" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeTableViewCell" rowHeight="72" id="Jml-d2-BTZ" customClass="homeTableViewCell" customModule="sportsconnect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jml-d2-BTZ" id="ULP-Z7-E3t">
@@ -195,6 +195,9 @@
                                         <state key="normal" title="Update">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onUpdate:" destination="ZeS-BI-Y0f" eventType="touchUpInside" id="IOT-jJ-XsN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -224,6 +227,11 @@
                         <color key="backgroundColor" red="0.29411764709999999" green="0.74901960779999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="u70-bx-DN6"/>
                     </view>
+                    <connections>
+                        <outlet property="activityLabel" destination="FGU-50-r4c" id="eqU-Tq-XkH"/>
+                        <outlet property="descriptionLabel" destination="S9b-WS-yZI" id="Zq6-bL-LiF"/>
+                        <outlet property="playersLabel" destination="OBj-si-Wdn" id="8RW-pL-zng"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B33-hb-cKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -440,8 +448,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coT-Nx-hde">
-                                <rect key="frame" x="23" y="232" width="152" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coT-Nx-hde">
+                                <rect key="frame" x="23" y="232" width="79" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
                                 <nil key="highlightedColor"/>
@@ -479,8 +487,8 @@
                     <connections>
                         <outlet property="genderSegControl" destination="VnV-5C-IxU" id="riC-ND-ypi"/>
                         <outlet property="nameField" destination="zjX-cj-bEh" id="751-mo-qkG"/>
-                        <outlet property="passwordField" destination="vKi-9S-AKb" id="MXD-wV-0Ek"/>
-                        <outlet property="usernameField" destination="c08-5p-IZj" id="PNd-pf-Do2"/>
+                        <outlet property="passwordField" destination="vKi-9S-AKb" id="1ys-f7-TfW"/>
+                        <outlet property="usernameField" destination="c08-5p-IZj" id="Kqb-2f-Ffe"/>
                         <segue destination="R5q-XW-OxR" kind="show" identifier="mainSegue2" id="KiI-BJ-Ekw"/>
                     </connections>
                 </viewController>

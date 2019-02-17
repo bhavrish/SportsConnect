@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Parse
+import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -25,17 +26,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onLogin(_ sender: Any) {
-        let username = usernameField.text ?? "" // provides default value of empty string if no username / password
-        let password = passwordField.text ?? ""
-        
-        PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
-            if let error = error {
-                print("User log in failed: \(error.localizedDescription)")
-            } else {
-                print("User logged in successfully")
-                self.performSegue(withIdentifier: "mainSegue", sender: nil)
-            }
+        if let email = usernameField.text, let pass = passwordField.text {
+            Auth.auth().signIn(withEmail: email, password: pass, completion: { (user,error) in
+                
+                // Chat that user isn't nil
+                if let u = user {
+                    self.performSegue(withIdentifier: "mainSegue", sender: nil)
+                }
+                else {
+                    // return error message if doesnt work
+                }
+            })
+            
         }
+        
     }
     
     @IBAction func onSignUp(_ sender: Any) {
