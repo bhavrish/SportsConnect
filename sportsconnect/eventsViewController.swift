@@ -7,64 +7,67 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var miles:String?
-    var gender:String?
-    var date:String?
     
-    var events:[[String:Any]] = [] //Array of Dictionaries: All the events
-    
-    /*  keys:
-        "name"
-        "date"
-        "location"
-        "people"
-     */
+    var refEvents:DatabaseReference?
+
+    var eventData = [eventsModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
-        eventsFiller()
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.rowHeight = 100
         
-    }
+        // set the firebase reference
+        refEvents = Database.database().reference().child("events");
+        
+        // retrieve the posts and listen for changes
+        refEvents?.observe(DataEventType.value, with: { (snapshot) in
+            
+            for events in snapshot.children.allObjects as! [DataSnapshot] {
+                let eventObject = events.value as? [String: AnyObject]
+                let eventTown = eventObject?["town"] as! String?
+                let eventDate = eventObject?["date"] as! String?
+                let eventLevel = eventObject?["level"] as! String?
+                let eventId = eventObject?["id"] as! String?
+                
+                let event = eventsModel(id: eventId,date: eventDate,town: eventTown ,level: eventLevel!)
+                
+                self.eventData.append(event)
+            }
+            
+            self.tableView.reloadData()
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            self.updateUI()
+       })
     }
     
     func updateUI() {
         self.tableView.rowHeight = 125
-        
     }
-    
-    //filling events (example)
-    func eventsFiller() {
-        events = [
-            [
-                "Name":"Soccer Game",
-                "Date":"02/17/19",
-                "location":"Jamaica, NewYork",
-                "Peolple":20
-            ]
-        ]
-    }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return eventData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! eventsTableViewCell
-        let first_event = events[0]
-        cell.eventNameLabel.text = first_event["Name"] as? String
-        cell.eventNameLabel.text = "hello"
+        
+        let event: eventsModel
+        event = eventData[indexPath.row]
+        cell.eventNameLabel.text = "Basketball" // Get this value from Anthony
+        cell.eventDateLabel.text = event.date
+        cell.eventTownLabel.text=event.town
+        
         
         return cell
     }
 
 }
+

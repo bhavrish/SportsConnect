@@ -45,7 +45,7 @@ class organizeEventsViewController: UIViewController {
         let key = refEvents?.childByAutoId().key
         
         //building child
-        let event = ["id":key,"date": "02/18/19","level": level as String]
+        let event = ["id":key,"date": "02/18/19","town": "Bayside","level": level as String]
         
         //pushes child to parent
         refEvents?.child(key!).setValue(event)
