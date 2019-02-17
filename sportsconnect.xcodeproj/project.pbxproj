@@ -29,7 +29,6 @@
 		495AF24B221942D900338962 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 495AF24A221942D900338962 /* GoogleService-Info.plist */; };
 		49B7C9782218671A00F690D8 /* eventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B7C9772218671A00F690D8 /* eventsTableViewCell.swift */; };
 		9750D26022194D4E00EB36F9 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9750D25F22194D4E00EB36F9 /* LaunchScreenViewController.swift */; };
-		9750D2622219A90D00EB36F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9750D2612219A90D00EB36F9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +79,6 @@
 		89C2ADAE5048634E2A114F56 /* Pods-sportsconnectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsconnectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sportsconnectUITests/Pods-sportsconnectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		93F4A67A37306B23107A15AD /* Pods-sportsconnectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsconnectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sportsconnectTests/Pods-sportsconnectTests.release.xcconfig"; sourceTree = "<group>"; };
 		9750D25F22194D4E00EB36F9 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
-		9750D2612219A90D00EB36F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C487B230665F5861826A1EE6 /* Pods_sportsconnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sportsconnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCD0E51D2195EEE7437948D /* Pods-sportsconnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsconnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-sportsconnect/Pods-sportsconnect.release.xcconfig"; sourceTree = "<group>"; };
 		E7395DF1555A1CBB074A0768 /* Pods-sportsconnectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsconnectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sportsconnectTests/Pods-sportsconnectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				45851C29221869B4002C7CB1 /* activityViewController.swift */,
 				45851C2F221907C1002C7CB1 /* activitiesModel.swift */,
 				9750D25F22194D4E00EB36F9 /* LaunchScreenViewController.swift */,
-				9750D2612219A90D00EB36F9 /* GoogleService-Info.plist */,
 				45851C3122196551002C7CB1 /* organizeEventsViewController.swift */,
 				495AF24A221942D900338962 /* GoogleService-Info.plist */,
 			);
@@ -313,7 +310,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45FBC8EC2217A157001670F7 /* LaunchScreen.storyboard in Resources */,
-				9750D2622219A90D00EB36F9 /* GoogleService-Info.plist in Resources */,
 				495AF24B221942D900338962 /* GoogleService-Info.plist in Resources */,
 				45FBC8E92217A157001670F7 /* Assets.xcassets in Resources */,
 				45FBC8E72217A154001670F7 /* Main.storyboard in Resources */,
