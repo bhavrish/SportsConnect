@@ -16,7 +16,7 @@ class homeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
 
     var refActivities:DatabaseReference?
-    
+    var username:String?
     var activityData = [activitiesModel]()
     let locationManager = CLLocationManager()
 

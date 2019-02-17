@@ -19,6 +19,7 @@ class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var miles:String?
     var partnerLevel:String?
     var date:String?
+    var username:String?
     
     var refEvents:DatabaseReference?
 
@@ -83,6 +84,11 @@ class eventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.performSegue(withIdentifier: "organizeSegue", sender: nil)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "messageSegue" {
+            let destinationVC = segue.destination as! messagingViewController
+
+        }
+    }
 }
 

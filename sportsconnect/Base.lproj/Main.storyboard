@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -371,18 +371,24 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuy-UV-wiD">
                                                     <rect key="frame" x="232" y="33" width="42" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.5568627451" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.29411764709999999" green="0.4823529412" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Join">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="joinButtonClicked:" destination="a93-5M-i3U" eventType="touchUpInside" id="Zqp-vy-2AO"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDv-IL-k9y">
-                                                    <rect key="frame" x="309" y="31" width="42" height="36"/>
+                                                    <rect key="frame" x="303" y="33" width="42" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.5568627451" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Leave">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="leaveButtonClicked:" destination="a93-5M-i3U" eventType="touchUpInside" id="IMs-cb-cJD"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW4-vY-ujB">
                                                     <rect key="frame" x="27" y="69" width="63" height="21"/>
@@ -398,10 +404,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n14-w0-ddL">
+                                                    <rect key="frame" x="226" y="22" width="55" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="chat">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="joinButtonClicked:" destination="a93-5M-i3U" eventType="touchUpInside" id="eQF-ZY-NbZ"/>
+                                                        <segue destination="hUc-42-AlH" kind="show" identifier="messageSegue" id="wnI-Lf-guL"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.29411764709999999" green="0.74901960779999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="chatButton" destination="n14-w0-ddL" id="eI2-5D-M54"/>
                                             <outlet property="eventDateLabel" destination="gW4-vY-ujB" id="pkg-lY-fP3"/>
                                             <outlet property="eventNameLabel" destination="Lps-Kb-Eer" id="ley-jM-y81"/>
                                             <outlet property="eventTownLabel" destination="bUm-yw-u8y" id="K9p-d1-B3S"/>
@@ -429,13 +447,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5Bu-dc-lAh" id="WCM-0C-RTK"/>
-                        <segue destination="hUc-42-AlH" kind="show" id="cbX-kk-sTb"/>
                         <segue destination="Auc-qr-EGW" kind="show" identifier="organizeSegue" id="v0h-pK-LvC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdJ-sB-6hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4062" y="100"/>
+            <point key="canvasLocation" x="4061.5999999999999" y="99.753694581280797"/>
         </scene>
         <!--Organize Events View Controller-->
         <scene sceneID="iD0-b0-cB8">
@@ -639,7 +656,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sportsHome" width="1500" height="1500"/>
+        <image name="chat" width="200" height="200"/>
+        <image name="sportsHome" width="360" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="o5B-y9-Bed"/>
